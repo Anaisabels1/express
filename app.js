@@ -1,8 +1,10 @@
 import Express from 'express';
 import logger from './middlewares/logger.js';
 import userRouter from './router/users.js';
+import cors from 'cors'
 
 const app = Express()
+app.use(cors())
 app.use(Express.json())
 
 app.get('/', (req, res) => {
